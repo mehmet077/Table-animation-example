@@ -37,9 +37,68 @@
         transition: background-color 0.2s;
     }
 
-    /* Hover efekti */
-    tbody tr:hover td {
-        background-color: #f9f9f9;
+    /*Table içi butonlar ayarları*/
+
+    .table-btn-proccess div {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .table-dropdown {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 3px;
+    }
+
+
+    .table-dropdown::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1.7em;
+        height: 1.7em;
+        background-color: rgba(100, 100, 100, 0.2);
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.2s ease;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    .table-dropdown:hover::before {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .table-btn {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 3px;
+    }
+
+
+    .table-btn::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1.7em;
+        height: 1.7em;
+        background-color: rgba(100, 100, 100, 0.2);
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.2s ease;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    .table-btn:hover::before {
+        transform: translate(-50%, -50%) scale(1);
     }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -56,47 +115,17 @@
         <tbody>
             <tr>
                 <td>1</td>
-                <td class="table-btn-proccess">
-                    <div class="d-flex align-items-center gap-2">
-                        <span>içerik</span>
-                        <div class="d-none">
-                            <button>deneme1</button>
-                            <button>deneme2</button>
-                            <button>deneme3</button>
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <i class="fa-solid fa-bars"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
-                        <div class="mbl-table-btn-proccess invisible">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <i class="fa-solid fa-bars"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                <td>
+                    mehmet
                 </td>
                 <td class="table-btn-proccess">
                     <div class="d-flex align-items-center gap-2">
                         <span>içerik</span>
                         <div class="d-none">
-                            <button>deneme1</button>
-                            <button>deneme2</button>
-                            <button>deneme3</button>
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <div class="table-btn" type="button"><i class="fa-solid fa-house-user"></i></div>
+                            <div class="table-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-bars"></i>
-                            </button>
+                            </div>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -104,10 +133,9 @@
                             </ul>
                         </div>
                         <div class="mbl-table-btn-proccess invisible">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <div class="table-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-bars"></i>
-                            </button>
+                            </div>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -125,13 +153,10 @@
                     <div class="d-flex align-items-center gap-2">
                         <span>içerik</span>
                         <div class="d-none">
-                            <button>deneme1</button>
-                            <button>deneme2</button>
-                            <button>deneme3</button>
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <div class="table-btn" type="button"><i class="fa-solid fa-house-user"></i></div>
+                            <div class="table-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-bars"></i>
-                            </button>
+                            </div>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -139,10 +164,9 @@
                             </ul>
                         </div>
                         <div class="mbl-table-btn-proccess invisible">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <div class="table-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-bars"></i>
-                            </button>
+                            </div>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -159,13 +183,10 @@
                     <div class="d-flex align-items-center gap-2">
                         <span>içerik</span>
                         <div class="d-none">
-                            <button>deneme1</button>
-                            <button>deneme2</button>
-                            <button>deneme3</button>
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <div class="table-btn" type="button"><i class="fa-solid fa-house-user"></i></div>
+                            <div class="table-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-bars"></i>
-                            </button>
+                            </div>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -173,10 +194,9 @@
                             </ul>
                         </div>
                         <div class="mbl-table-btn-proccess invisible">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <div class="table-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-bars"></i>
-                            </button>
+                            </div>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
